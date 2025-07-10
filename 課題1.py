@@ -1,15 +1,9 @@
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score
 import torch
 import torch.nn as nn
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
 
-data = pd.read_csv('/Users/yukishimomura/Library/CloudStorage/OneDrive-神戸大学【全学】/卒論データ.csv', index_col = None, header = 0, encoding = "cp932")
+data = pd.read_csv('/Users/yukishimomura/Library/CloudStorage/OneDrive-神戸大学【全学】/卒論データ.csv', index_col = None, header = 0, encoding = "cp932")
 
 X = data.drop(["win_1"], axis=1)
 T = data[["win_1"]]
