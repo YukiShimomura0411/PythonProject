@@ -13,3 +13,4 @@
 ＜結果と考察＞
 
 Epoch: 100/100, Train_Loss: 0.6092, Train_Acc: 0.6677, Test Loss: 0.6088, Test_Acc: 0.6667
+
