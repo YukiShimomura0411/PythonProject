@@ -1,3 +1,5 @@
+課題..py
+
 ＜Kaggleの何のデータ（URLとデータの名前）を用いたのか。＞
 
 薬の処方のデータ　https://www.kaggle.com/datasets/prathamtripathi/drug-classification
@@ -46,6 +48,8 @@ Epoch [100/100], Loss: 0.0136
 
 Test Accuracy: 97.50 %
 
+
+課題1.py
 
 ＜Kaggleの何のデータ（URLとデータの名前）を用いたのか。＞
 
