@@ -76,15 +76,25 @@ Test Accuracy: 97.50 %
 
 ＜結果と考察＞
 
-Epoch [20/100], Loss: 0.1618
+Epoch [10/100], Loss: 0.1877
 
-Epoch [40/100], Loss: 0.1235
+Epoch [20/100], Loss: 0.1563
 
-Epoch [60/100], Loss: 0.1141
+Epoch [30/100], Loss: 0.1377
 
-Epoch [80/100], Loss: 0.0912
+Epoch [40/100], Loss: 0.1150
 
-Epoch [100/100], Loss: 0.0691
+Epoch [50/100], Loss: 0.1105
+
+Epoch [60/100], Loss: 0.1146
+
+Epoch [70/100], Loss: 0.1043
+
+Epoch [80/100], Loss: 0.0863
+
+Epoch [90/100], Loss: 0.0777
+
+Epoch [100/100], Loss: 0.0703
 
 <img width="1000" height="800" alt="価格" src="https://github.com/user-attachments/assets/44ef02ca-40ef-49b8-8649-f40ce9109f6e" />
 
