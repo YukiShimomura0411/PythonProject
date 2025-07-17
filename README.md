@@ -48,6 +48,46 @@ Epoch [100/100], Loss: 0.0136
 
 Test Accuracy: 97.50 %
 
+課題2..py
+
+＜Kaggleの何のデータ（URLとデータの名前）を用いたのか。＞
+
+スポーツカーの価格　[https://www.kaggle.com/datasets/prathamtripathi/drug-classification](https://www.kaggle.com/datasets/rkiattisak/sports-car-prices-dataset)
+
+＜何を入力として何を推定するのか。＞
+
+回帰
+
+入力　Engine Size (L)、Horsepower、Torque (lb-ft)、0-60 MPH Time (seconds)
+
+出力　price
+
+総データ数　1007
+
+＜ニューラルネットワークの構成（ニューロン数，層数など）＞
+
+入力層、中間層2つ、出力層からなるニューラルネットワーク。1つ目の中間層のニューロン数は128、2つ目の中間層のニューロン数は64
+
+損失関数はMSE
+
+オプティマイザはAdam
+
+学習率は0.001
+
+＜結果と考察＞
+
+Epoch [20/100], Loss: 0.1618
+
+Epoch [40/100], Loss: 0.1235
+
+Epoch [60/100], Loss: 0.1141
+
+Epoch [80/100], Loss: 0.0912
+
+Epoch [100/100], Loss: 0.0691
+
+<img width="1000" height="800" alt="価格" src="https://github.com/user-attachments/assets/44ef02ca-40ef-49b8-8649-f40ce9109f6e" />
+
 
 課題1.py
 
