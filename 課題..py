@@ -8,10 +8,8 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 import numpy as np
 import matplotlib.pyplot as plt
 
-# データセットの読み込み
 df = pd.read_csv('/Users/yukishimomura/Downloads/drug200.csv')
 
-# 特徴量 (X) とターゲット (y) を分離
 X = df.drop('Drug', axis=1)
 y = df['Drug']
 
@@ -29,16 +27,14 @@ numerical_cols = ['Age', 'Na_to_K']
 X[numerical_cols] = scaler.fit_transform(X[numerical_cols])
 
 
-# 訓練データとテストデータに分割 (80% 訓練, 20% テスト)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-# データをPyTorchのテンソルに変換
+
 X_train_tensor = torch.tensor(X_train.values.astype(np.float32))
 y_train_tensor = torch.tensor(y_train, dtype=torch.long)
 X_test_tensor = torch.tensor(X_test.values.astype(np.float32))
 y_test_tensor = torch.tensor(y_test, dtype=torch.long)
 
-# DataLoaderの作成
 train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
 test_dataset = TensorDataset(X_test_tensor, y_test_tensor)
 
@@ -59,19 +55,16 @@ class DrugClassifier(nn.Module):
         x = self.output_layer(x)
         return x
 
-# モデルのインスタンス化
 input_size = X_train.shape[1]
 output_size = len(label_encoder.classes_)
 model = DrugClassifier(input_features=input_size, num_classes=output_size)
 
 
-# 損失関数とオプティマイザの定義
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-# 学習ループ
 epochs = 100
-loss_history = []  # 損失を記録するためのリスト
+loss_history = []
 
 for epoch in range(epochs):
     model.train()
@@ -84,14 +77,12 @@ for epoch in range(epochs):
         optimizer.step()
         running_loss += loss.item()
 
-    # エポックごとの平均損失を計算してリストに追加
     epoch_loss = running_loss / len(train_loader)
     loss_history.append(epoch_loss)
 
     if (epoch + 1) % 10 == 0:
         print(f'Epoch [{epoch + 1}/{epochs}], Loss: {epoch_loss:.4f}')
 
-# 学習後の損失をプロット
 plt.figure(figsize=(10, 5))
 plt.plot(range(1, epochs + 1), loss_history, marker='o', linestyle='-')
 plt.title('Training Loss Over Epochs')
@@ -100,12 +91,11 @@ plt.ylabel('Loss')
 plt.grid(True)
 plt.show()
 
-# 評価ループ
-model.eval() # モデルを評価モードに設定
+model.eval()
 correct = 0
 total = 0
 
-with torch.no_grad(): # 勾配計算を無効化
+with torch.no_grad():
     for features, labels in test_loader:
         outputs = model(features)
         _, predicted = torch.max(outputs.data, 1)
