@@ -1,3 +1,56 @@
+課題..py
+
+＜Kaggleの何のデータ（URLとデータの名前）を用いたのか。＞
+
+薬の処方のデータ　https://www.kaggle.com/datasets/prathamtripathi/drug-classification
+
+＜何を入力として何を推定するのか。＞
+
+多クラス分類（5つ）
+
+入力　Age、Sex、Blood Pressure Levels (BP)、Cholesterol Levels、Na to Potassium Ration
+
+出力　Drug type
+
+＜ニューラルネットワークの構成（ニューロン数，層数など）＞
+
+入力層、中間層2つ、出力層からなるニューラルネットワーク。1つ目の中間層のニューロン数は64、2つ目の中間層のニューロン数は32
+
+損失関数はCrossEntropy
+
+オプティマイザはAdam
+
+学習率は0.001
+
+＜結果と考察＞
+
+Epoch [10/100], Loss: 0.7863
+
+Epoch [20/100], Loss: 0.4239
+
+Epoch [30/100], Loss: 0.1854
+
+Epoch [40/100], Loss: 0.0924
+
+Epoch [50/100], Loss: 0.0563
+
+Epoch [60/100], Loss: 0.0387
+
+Epoch [70/100], Loss: 0.0275
+
+Epoch [80/100], Loss: 0.0214
+
+Epoch [90/100], Loss: 0.0170
+
+Epoch [100/100], Loss: 0.0136
+
+<img width="1000" height="500" alt="Figure_1" src="https://github.com/user-attachments/assets/c937eba6-456b-4186-bf47-461994103484" />
+
+Test Accuracy: 97.50 %
+
+
+課題1.py
+
 ＜Kaggleの何のデータ（URLとデータの名前）を用いたのか。＞
 
 卒業研究で使用したデータ（ボートレースのデータ484,006レース）
